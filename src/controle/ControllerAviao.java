@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import entidade.Aviao;
+import util.Input;
 
 public class ControllerAviao {
 	
@@ -19,10 +20,10 @@ public class ControllerAviao {
 		
 		System.out.println("===== REGISTRO DE AVIÃO =====");
 		System.out.print("Nome: ");
-		aviao.setNomeAviao(scNome.nextLine());
+		aviao.setNomeAviao(Input.get());
 		
 		System.out.print("Data de Embarque (dd/mm/aaaa): ");
-		String temp = scDataEm.nextLine();
+		String temp = Input.get();
 		DateTimeFormatter data = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		aviao.setDataEmbarque(LocalDate.parse(temp, data));
 		
@@ -31,10 +32,10 @@ public class ControllerAviao {
 		aviao.setDataDesembarque(LocalDate.parse(temp, data));
 
 		System.out.print("Destino: ");
-		aviao.setDestino(scDestino.nextLine());
+		aviao.setDestino(Input.get());
 		
 		System.out.print("Quantidade de Lotes: ");
-		aviao.setQtdLotes(scQtdLotes.nextInt());
+		aviao.setQtdLotes(Integer.parseInt(Input.get()));
 		
 	}
 	
