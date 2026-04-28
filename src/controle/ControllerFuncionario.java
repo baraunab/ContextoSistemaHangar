@@ -3,39 +3,33 @@ package controle;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import entidade.Funcionario;
+import util.Input;
 
 public class ControllerFuncionario {
 	ArrayList<Funcionario> funcionarios = new ArrayList<>();
 
 	public void novoFuncionario () {
-		Scanner scId= new Scanner(System.in);
-		Scanner scNome = new Scanner(System.in);
-		Scanner scFuncao= new Scanner(System.in);
-		Scanner scinicioTurno = new Scanner(System.in);
-		Scanner scFImTurno = new Scanner(System.in);
-		
 		Funcionario funcionario = new Funcionario();
 		
 		System.out.println("===== ADICIONAR FUNCIONÁRIO =====");
 		
 		System.out.print("ID: ");
-		funcionario.setIdentificador(scId.nextInt());
+		funcionario.setIdentificador(Integer.parseInt(Input.get()));
 		System.out.print("Nome: ");
-		funcionario.setNome(scNome.nextLine());
+		funcionario.setNome(Input.get());
 		System.out.print("Função: ");
-		funcionario.setFuncao(scFuncao.nextLine());
+		funcionario.setFuncao(Input.get());
 		System.out.print("Início do turno (hh:mmAM/PM): ");
 		
 		
-		String temp = scinicioTurno.nextLine();
+		String temp = Input.get();
 		DateTimeFormatter hora = DateTimeFormatter.ofPattern("hh[:mm]a");
 		funcionario.setInicioTurno(LocalTime.parse(temp, hora));
 	
 		System.out.print("Fim do turno (hh:mmAM/PM): ");
-		temp = scFImTurno.nextLine();	
+		temp = Input.get();	
 		funcionario.setFimTurno(LocalTime.parse(temp, hora));		
 		
 		funcionarios.add(funcionario);

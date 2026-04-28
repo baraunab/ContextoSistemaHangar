@@ -1,34 +1,28 @@
 package controle;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import entidade.Correspondencia;
+import util.Input;
 
 public class ControllerCorrespondencia {
 	ArrayList<Correspondencia> correspondencias = new ArrayList<>();
 
 	public void novaCorrespondencia() {
-		Scanner scNomeRem = new Scanner(System.in);
-		Scanner scNomeDes = new Scanner(System.in);
-		Scanner scDoc = new Scanner(System.in);
-		Scanner scDestino = new Scanner(System.in);
-		Scanner scCod= new Scanner(System.in);
-		
 		Correspondencia correspondencia = new Correspondencia();
 		
 		System.out.println("===== ADICIONAR CORRESPONDÊNCIA =====");
 		
 		System.out.print("Nome do Remetente: ");
-		correspondencia.setNomeRemetente(scNomeRem.nextLine());
+		correspondencia.setNomeRemetente(Input.get());
 		System.out.print("Nome do Destinatário: ");
-		correspondencia.setNomeDestinatario(scNomeDes.nextLine());
+		correspondencia.setNomeDestinatario(Input.get());
 		System.out.print("Documento: ");
-		correspondencia.setDocumentoRemetente(scDoc.nextLine());
+		correspondencia.setDocumentoRemetente(Input.get());
 		System.out.print("Destino: ");
-		correspondencia.setDestino(scDestino.nextLine());
+		correspondencia.setDestino(Input.get());
 		System.out.print("Código: ");
-		correspondencia.setCodigoRastreio(scCod.nextInt());
+		correspondencia.setCodigoRastreio(Integer.parseInt(Input.get()));
 		
 		correspondencias.add(correspondencia);
 	

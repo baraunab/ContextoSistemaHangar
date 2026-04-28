@@ -4,40 +4,35 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import entidade.Lote;
+import util.Input;
 
 public class ControllerLote {
 	
 	ArrayList<Lote> lotes = new ArrayList<>();
 	
-	public void novoLote() {
-		Scanner scID = new Scanner(System.in);
-		Scanner scDataEnvio = new Scanner(System.in);
-		Scanner scHoraEnvio = new Scanner(System.in);
-		Scanner scDestino = new Scanner(System.in);
-		
+	public void novoLote() {	
 		Lote lote = new Lote();
 		String temp = new String();
 		
 		System.out.println("===== ADICIONAR LOTE =====");
 		
 		System.out.print("ID: ");
-		lote.setIdentificador(scID.nextInt());
+		lote.setIdentificador(Integer.parseInt(Input.get()));
 		
 		System.out.print("Data de Envio (dd/mm/aaaa): ");
-		temp = scDataEnvio.nextLine();
+		temp = Input.get();
 		DateTimeFormatter data = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		lote.setDataEnvio(LocalDate.parse(temp, data));
 	
 		System.out.print("Horário de envio (hh:mmAM/PM): ");
-		temp = scHoraEnvio.nextLine();	
+		temp = Input.get();	
 		DateTimeFormatter hora = DateTimeFormatter.ofPattern("hh[:mm]a");
 		lote.setHoraEnvio(LocalTime.parse(temp, hora));
 		
 		System.out.print("Destino: ");
-		lote.setDestino(scDestino.nextLine());
+		lote.setDestino(Input.get());
 		
 		lotes.add(lote);
 	}

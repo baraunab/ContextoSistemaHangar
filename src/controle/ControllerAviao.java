@@ -2,7 +2,6 @@ package controle;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 import entidade.Aviao;
 import util.Input;
@@ -11,13 +10,6 @@ public class ControllerAviao {
 	
 	Aviao aviao = new Aviao();
 	public void novoAviao () {
-		Scanner scNome = new Scanner(System.in);
-		Scanner scDataEm = new Scanner(System.in);
-		Scanner scDataDes = new Scanner(System.in);
-		Scanner scDestino = new Scanner(System.in);
-		Scanner scQtdLotes = new Scanner(System.in);
-		
-		
 		System.out.println("===== REGISTRO DE AVIÃO =====");
 		System.out.print("Nome: ");
 		aviao.setNomeAviao(Input.get());
@@ -28,7 +20,7 @@ public class ControllerAviao {
 		aviao.setDataEmbarque(LocalDate.parse(temp, data));
 		
 		System.out.print("Data de Desembarque (dd/mm/aaaa): ");
-		temp = scDataDes.nextLine();
+		temp = Input.get();
 		aviao.setDataDesembarque(LocalDate.parse(temp, data));
 
 		System.out.print("Destino: ");

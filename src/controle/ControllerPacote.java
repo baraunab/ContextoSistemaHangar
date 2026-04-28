@@ -2,7 +2,6 @@ package controle;
 
 import java.util.ArrayList;
 
-import entidade.Correspondencia;
 import entidade.Pacote;
 import util.Input;
 

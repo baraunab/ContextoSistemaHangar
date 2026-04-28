@@ -1,31 +1,23 @@
 package controle;
 
-import java.util.Scanner;
-
 import entidade.Hangar;
+import util.Input;
 
 public class ControllerHangar {
 	
 	Hangar hangar = new Hangar();
 	public void novoHangar () {
-		
-		Scanner scID = new Scanner(System.in);
-		Scanner scLoc = new Scanner(System.in);
-		Scanner scTamanho = new Scanner(System.in);
-		Scanner scCapacidade= new Scanner(System.in);
-		Scanner scQuantidade= new Scanner(System.in);
-		
 		System.out.println("===== REGISTRO DE HANGAR =====");
 		System.out.print("ID: ");
-		hangar.setIdentificador(scID.nextInt());
+		hangar.setIdentificador(Integer.parseInt(Input.get()));
 		System.out.print("Localização: ");
-		hangar.setLocalizacao(scLoc.nextLine());
+		hangar.setLocalizacao(Input.get());
 		System.out.print("Tamanho: ");
-		hangar.setTamanho(scTamanho.nextLine());
+		hangar.setTamanho(Input.get());
 		System.out.print("Capacidade: ");
-		hangar.setCapacidadeLotes(scCapacidade.nextInt());
+		hangar.setCapacidadeLotes(Integer.parseInt(Input.get()));
 		System.out.print("Quantidade de lotes: ");
-		hangar.setQuantidadeLotes(scQuantidade.nextInt());
+		hangar.setQuantidadeLotes(Integer.parseInt(Input.get()));
 		
 	}
 	
