@@ -49,7 +49,7 @@ public class ControllerPacote {
 		System.out.println("===== LISTA DE PACOTES ======");
 		int i = 1;
 		for (Pacote pacote : pacotes) {
-			System.out.print("- REGISTRO " + i);
+			System.out.println("- REGISTRO " + i);
 			mostrarPacote(pacote);
 			i++;
 		}

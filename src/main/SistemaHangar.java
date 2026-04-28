@@ -35,8 +35,8 @@ public class SistemaHangar {
 			System.out.println("2. MOSTRAR HANGAR ");
 			System.out.print("\nESCOLHA: ");
 			opcao = Integer.parseInt(Input.get());
-			
-			switch(opcao) {
+
+			switch (opcao) {
 			case 1:
 				Hangar.novoHangar();
 				menu();
@@ -48,7 +48,7 @@ public class SistemaHangar {
 			default:
 				menuDef();
 			}// fim switch
-			
+
 			break; // fim hangar
 		case 2: // AVIÃO
 			System.out.println("===== AVIÃO =====");
@@ -56,8 +56,8 @@ public class SistemaHangar {
 			System.out.println("2. MOSTAR AVIÃO");
 			System.out.print("\nESCOLHA: ");
 			opcao = Integer.parseInt(Input.get());
-			
-			switch(opcao) {
+
+			switch (opcao) {
 			case 1:
 				Aviao.novoAviao();
 				menu();
@@ -70,7 +70,6 @@ public class SistemaHangar {
 				menuDef();
 			}// fim switch
 
-			
 			break; // fim aviao
 		case 3: // LOTES
 			System.out.println("===== LOTES =====");
@@ -79,8 +78,8 @@ public class SistemaHangar {
 			System.out.println("3. CORRESPONDÊNCIAS");
 			System.out.print("\nESCOLHA: ");
 			opcao = Integer.parseInt(Input.get());
-			
-			switch(opcao) {
+
+			switch (opcao) {
 			case 1:
 				Lote.novoLote();
 				menu();
@@ -97,8 +96,8 @@ public class SistemaHangar {
 				System.out.println("4. MOSTRAR PACOTES");
 				System.out.print("\nESCOLHA: ");
 				opcao = Integer.parseInt(Input.get());
-				
-				switch(opcao) {
+
+				switch (opcao) {
 				case 1:
 					Correspondencia.novaCorrespondencia();
 					menu();
@@ -123,16 +122,16 @@ public class SistemaHangar {
 				menuDef();
 			}// fim switch
 
-			break; // fim lote 
-			
+			break; // fim lote
+
 		case 4: // FUNCIONARIOS
 			System.out.println("===== FUNCIONÁRIOS =====");
 			System.out.println("1. ADICIONAR FUNCIONÁRIO");
 			System.out.println("2. MOSTRAR FUNCIONÁRIOS");
 			System.out.print("\nESCOLHA: ");
 			opcao = Integer.parseInt(Input.get());
-			
-			switch(opcao) {
+
+			switch (opcao) {
 			case 1:
 				Funcionario.novoFuncionario();
 				menu();
@@ -144,10 +143,10 @@ public class SistemaHangar {
 			default:
 				menuDef();
 			}// fim switch
-			
+
 			break; // fim funcionarios
 		default:
-			
+
 		} // fim switch
 
 	} // fim menu
@@ -156,5 +155,5 @@ public class SistemaHangar {
 		System.out.println("OPÇÃO INVÁLIDA! TENTE NOVAMENTE");
 		menu();
 	}
-	
+
 }

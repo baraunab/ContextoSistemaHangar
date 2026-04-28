@@ -40,7 +40,7 @@ public class ControllerCorrespondencia {
 		System.out.println("===== LISTA DE CORRESPONDÊNCIAS ======");
 		int i = 1;
 		for (Correspondencia correspondencia : correspondencias) {
-			System.out.print("- REGISTRO " + i);
+			System.out.println("- REGISTRO " + i);
 			mostrarCorrespondencia(correspondencia);
 			i++;
 		}
